@@ -60,6 +60,10 @@ app.post('/emissions', (req, res) => {
 
 // Start the server with 'node app.js' in command line
 const PORT = 3000;
-app.listen(PORT, () => {
-    console.log('Server has started on port ' + PORT);
+app.listen(PORT, (err) => {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log('Server has started on port ' + PORT);
+    }
 });
