@@ -1,3 +1,11 @@
+## Application Walk-Through
+Here's a walk-through of the functionality of the application:
+
+<img src='https://i.imgur.com/TIjsyNw.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'/>
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+
 ## Inspiration 
 We all use Twitter a lot and gain tons of entertainment from it. This all can't be free— everything comes at a cost. We wanted to raise social awareness of the environmental impacts of using the social media, and the web in general.
 
