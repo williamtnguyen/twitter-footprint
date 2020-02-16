@@ -29,9 +29,14 @@ app.get('/emissions', (req, res) => {
     dataName = 'null_value';
 
     py.stdout.on('data' , function(data) {
+        var arr = data.toString().split(" ");
         dataString = data.toString().split(" ")[0];
-        dataName = data.toString().split(" ")[1];
-        dataDate = data.toString().split(" ")[2];
+        dataName = '';
+        var i;
+        for (i = 1; i < arr.length - 1; i++) {
+            dataName += arr[i] + " ";
+        }
+        dataDate = data.toString().split(" ")[arr.length - 1];
         app.locals.cNum = parseInt(dataString, 10);
     });
     py.stdout.on('end', function() {
