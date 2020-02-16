@@ -9,8 +9,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 // Serve the public directory (CSS and JS)
 app.use(express.static(__dirname + '/public'));
 
-
+//~~~~~~~~~//
 /* ROUTES */
+//~~~~~~~~//
+
 var userName; // global var to be passed to 'emissions' GET route
 
 // Landing Page 
