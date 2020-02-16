@@ -1,7 +1,5 @@
 import sys, json
 import twitterscraper as ts
-import requests
-from bs4 import BeautifulSoup
 
 def read_in():
     lines = sys.stdin.readlines()

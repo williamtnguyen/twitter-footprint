@@ -23,7 +23,7 @@ app.get('/emissions', (req, res) => {
     // console.log(userName);
     // res.send('emissions', {userName: userName});
     var spawn = require('child_process').spawn,
-    py = spawn('python', ['compute_input.py']),
+    py = spawn('python3', ['compute_input.py']),
     data = userName,
     dataString = 'null_value';
 
@@ -31,7 +31,7 @@ app.get('/emissions', (req, res) => {
     dataString = data.toString();
     });
     py.stdout.on('end', function() {
-    res.render("emissions", {numTweets : dataString})
+        res.render("emissions", {numTweets : dataString})
     });
     py.stdin.write(JSON.stringify(data));
     py.stdin.end();
@@ -49,5 +49,5 @@ app.post('/emissions', (req, res) => {
 // Start the server with 'node app.js' in command line
 const PORT = 3000;
 app.listen(PORT, () => {
-    // console.log('Server has started on port ' + PORT);
+    console.log('Server has started on port ' + PORT);
 });
