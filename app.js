@@ -25,15 +25,17 @@ app.get('/emissions', (req, res) => {
     var spawn = require('child_process').spawn,
     py = spawn('python', ['compute_input.py']),
     data = userName,
-    dataString = 'null_val';
+    dataString = 'null_value';
 
     py.stdout.on('data' , function(data) {
     dataString = data.toString();
     });
     py.stdout.on('end', function() {
+    console.log("lol2")
     });
     py.stdin.write(JSON.stringify(data));
     py.stdin.end();
+    console.log("lol")
 });
 
 // Emissions POST route: sends data from landing page input to the Emissions GET route
