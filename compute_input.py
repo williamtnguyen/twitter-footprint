@@ -8,7 +8,7 @@ def read_in():
 def main():
     lines = read_in()
     info = ts.query_user_info(user=lines)
-    print(info.tweets)
+    print(str(info.tweets) + " " + str(info.full_name) + " " + str(info.followers))
 
 if __name__ == '__main__':
     main()    

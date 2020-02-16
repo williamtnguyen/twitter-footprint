@@ -26,12 +26,17 @@ app.get('/emissions', (req, res) => {
     py = spawn('python3', ['compute_input.py']),
     data = userName,
     dataString = 'null_value';
+    dataName = 'null_value';
 
     py.stdout.on('data' , function(data) {
-        dataString = data.toString();
+        dataString = data.toString().split(" ")[0];
+        dataName = data.toString().split(" ")[1];
+        dataDate = data.toString().split(" ")[2];
+        app.locals.cNum = parseInt(dataString, 10);
     });
     py.stdout.on('end', function() {
-        res.render("emissions", {numTweets : dataString})
+        app.locals.cNum = parseInt(dataString, 10);
+        res.render("emissions", {numTweets : dataString, urName : dataName, urDate : dataDate});
     });
     py.stdin.write(JSON.stringify(data));
     py.stdin.end();
