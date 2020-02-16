@@ -31,11 +31,10 @@ app.get('/emissions', (req, res) => {
     dataString = data.toString();
     });
     py.stdout.on('end', function() {
-    console.log("lol2")
+    res.render("emissions", {numTweets : dataString})
     });
     py.stdin.write(JSON.stringify(data));
     py.stdin.end();
-    console.log("lol")
 });
 
 // Emissions POST route: sends data from landing page input to the Emissions GET route
