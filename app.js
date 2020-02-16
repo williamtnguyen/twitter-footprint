@@ -20,15 +20,29 @@ app.get('/', (req, res) => {
 
 // Emissions GET route
 app.get('/emissions', (req, res) => {
-    console.log(userName);
+    // console.log(userName);
     // res.send('emissions', {userName: userName});
+    var spawn = require('child_process').spawn,
+    py = spawn('python', ['compute_input.py']),
+    data = userName,
+    dataString = '';
+
+    py.stdout.on('data' , function(data) {
+    dataString += data.toString();
+    });
+    py.stdout.on('end', function() {
+    });
+    py.stdin.write(JSON.stringify(data));
+    py.stdin.end();
+
+    console.log(dataString);
 });
 
 // Emissions POST route: sends data from landing page input to the Emissions GET route
 app.post('/emissions', (req, res) => {
     userName = req.body.twitterUsername;
     // res.redirect('/emissions');
-    console.log(req.body.twitterUsername);
+    // console.log(req.body.twitterUsername);
     res.redirect('/emissions');
 });
 
@@ -36,5 +50,5 @@ app.post('/emissions', (req, res) => {
 // Start the server with 'node app.js' in command line
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log('Server has started on port ' + PORT);
+    // console.log('Server has started on port ' + PORT);
 });
