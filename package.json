@@ -1,0 +1,15 @@
+{
+  "name": "twitter-footprint",
+  "version": "1.0.0",
+  "description": "an app that effectively depicts your carbon footprint via using social media",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William Nguyen, Kelvin Ngo, Kevin Luuu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
