@@ -11,10 +11,9 @@ app.use(express.static(__dirname + '/public'));
 
 
 /* ROUTES */
-
 // Landing page route
 app.get('/', (req, res) => {
-    res.send('welcome to landing page');
+	res.render('landing');
 });
 
 
