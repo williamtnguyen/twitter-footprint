@@ -4,16 +4,32 @@ const express = require('express');
 
 // Setting default view engine
 app.set('view engine', 'ejs');
-// Allows us to get input from form
+// Allows us to get input data from form
 app.use(bodyParser.urlencoded({extended: true}));
 // Serve the public directory (CSS and JS)
 app.use(express.static(__dirname + '/public'));
 
+var userName;
 
 /* ROUTES */
-// Landing page route
+
+// Landing Page 
 app.get('/', (req, res) => {
 	res.render('landing');
+});
+
+// Emissions GET route
+app.get('/emissions', (req, res) => {
+    console.log(userName);
+    // res.send('emissions', {userName: userName});
+});
+
+// Emissions POST route: sends data from landing page input to the Emissions GET route
+app.post('/emissions', (req, res) => {
+    userName = req.body.twitterUsername;
+    // res.redirect('/emissions');
+    console.log(req.body.twitterUsername);
+    res.redirect('/emissions');
 });
 
 

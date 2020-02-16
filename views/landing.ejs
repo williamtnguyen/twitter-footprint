@@ -5,12 +5,11 @@
 			<h1 class="">you do be emitting tho 😳</h1>
 			<p class="lead text-center">please enter your twitter username below:</p>
 	
-			<div class="input-group mt-3">
-				<div class="input-group-prepend">
-				  <span class="input-group-text" id="basic-addon1">@</span>
-				</div>
-				<input type="text" class="form-control" placeholder="your twitter username" aria-label="Username" aria-describedby="basic-addon1">
-			</div>
+			<form action="/emissions" method="POST">
+				<!-- name attribute is what we use to pass in the body of the request -->
+				<input type="text" name="twitterUsername">
+				<button>Submit</button>
+			</form>
 		</div>
 	</div>
 		
