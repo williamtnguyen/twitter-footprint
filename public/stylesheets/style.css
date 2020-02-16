@@ -1,3 +1,7 @@
+html {
+  font-family: 'Lato', sans-serif;
+}
+
 #landingPage {
   height: 100vh;
   background: #19e690;
@@ -39,6 +43,10 @@
   margin-right: auto;
 }
 
+#landingPage #header form .input-group input.middle:focus {
+  outline-width: 0;
+}
+
 #landingPage #header #emissionCount {
   font-size: 200%;
 }
@@ -53,5 +61,10 @@
 
 #landingPage #header .fa-google {
   color: #fbbc05;
+}
+
+footer {
+  background-color: #19e690;
+  color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */

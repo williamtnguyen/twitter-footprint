@@ -4,6 +4,9 @@ $twitter-blue: #1da1f2;
 $youtube-red: #ff0000;
 $google-yellow: #fbbc05;
 
+html {
+    font-family: 'Lato', sans-serif;
+}
 
 #landingPage {
     height: 100vh;
@@ -35,6 +38,10 @@ $google-yellow: #fbbc05;
                 width: 50%;
                 margin-left: auto;
                 margin-right: auto;
+                
+                input.middle:focus {
+                    outline-width: 0;
+                }
             }
         }
 
@@ -56,4 +63,9 @@ $google-yellow: #fbbc05;
             color: $google-yellow;
         }
     }
+}
+
+footer {
+    background-color: $background-color;
+    color: #ffffff;
 }
