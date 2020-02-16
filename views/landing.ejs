@@ -7,8 +7,13 @@
 	
 			<form action="/emissions" method="POST">
 				<!-- name attribute is what we use to pass in the body of the request -->
-				<input type="text" name="twitterUsername">
-				<button>Submit</button>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="basic-addon1">@</span>
+					</div>
+					<input type="text" class="form-control" name="twitterUsername" placeholder="username">
+				  </div>				  
+				<!-- <button>Submit</button> -->
 			</form>
 		</div>
 	</div>

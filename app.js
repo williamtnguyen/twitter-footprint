@@ -28,7 +28,7 @@ app.get('/emissions', (req, res) => {
     dataString = 'null_value';
 
     py.stdout.on('data' , function(data) {
-    dataString = data.toString();
+        dataString = data.toString();
     });
     py.stdout.on('end', function() {
         res.render("emissions", {numTweets : dataString})
